@@ -18,13 +18,13 @@ use Illuminate\Support\Facades\Route;
 //     // return 123;
 // });
 
-Route::view('/','home');
+Route::view('/','home')->name('home');
 
 // Route::get('/contact',function(){
 //   return view('contact');
 // });
 
-Route::view('/contact', 'contact');
+Route::view('/contact', 'contact')->name('contact');
 
 // Route::get('blog-post/{id}',function($id){
 //   $pages=[
@@ -41,11 +41,11 @@ Route::get('blog-post/{id}/{welcome?}',function($id,$welcome=1){
     2=> ['title'=>"Page 2", 'content'=>' from Page 2'],
     3=> ['title'=>"Page 3", 'content'=>' from Page 3'],
   ];
-  $welcomes=[1=>'<strong>Hello</strong>',2=>'<strong>Welcome</strong>'];
+  $welcomes=[1=>'<strong>Hello</strong>',2=>'<strong>Welcome</strong >'];
   return view('blog-post',[
     'data'=>$pages[$id],'welcome'=>$welcomes[$welcome]
   ]);
-});
+})->name('blog-post');
 
 /**
  * BEGIN: Injected from .gp/snippets/laravel/routes/web/allow-mixed-web.snippet
