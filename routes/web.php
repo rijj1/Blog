@@ -17,8 +17,7 @@ Route::get('/','HomeController@home')->name('home');
 
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
-Route::get('blog-post/{id}/{welcome?}','HomeController@blogpost')->name('blog-post');
-
+Route::resource('/posts','PostController')->only(['show','index']);
 /**
  * BEGIN: Injected from .gp/snippets/laravel/routes/web/allow-mixed-web.snippet
  */
