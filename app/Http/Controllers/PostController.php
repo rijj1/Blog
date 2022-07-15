@@ -42,6 +42,8 @@ class PostController extends Controller
         $blogpost->content=$request->input('content'); 
         $blogpost->save();
 
+        $request->session()->flash('status','Blog Post Created Successfully!');
+
         return redirect()->route('posts.show',['post'=>$blogpost->id]);
     }
 
@@ -51,8 +53,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$id)
     {
+        // $request->session()->reflash();
         return view('posts.show',['post'=>BlogPost::findOrFail($id)]);
     }
 
