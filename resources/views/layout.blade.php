@@ -10,6 +10,7 @@
       <li><a href="{{route('home')}}">Home</a></li>
       <li><a href="{{route('contact')}}">Contact</a></li>
       <li><a href="{{route('posts.index')}}">Blog Post</a></li>
+      <li><a href="{{route('posts.create')}}">Create Post</a></li>
     </ul>
     @yield('content')
   </body>
