@@ -9,9 +9,9 @@ Create Posts
 @csrf
 <p>
   <label>Title</label>
-  <input type='text' name='title'><br>
+  <input type='text' name='title' value="{{old('title')}}"><br>
   <label>Content</label>
-  <input type='text' name='content'><br>
+  <input type='text' name='content' value="{{old('content')}}"><br>
   <button type="submit">Create</button>
 </p>
 @if ($errors->any())
