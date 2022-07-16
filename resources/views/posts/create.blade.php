@@ -14,5 +14,14 @@ Create Posts
   <input type='text' name='content'><br>
   <button type="submit">Create</button>
 </p>
+@if ($errors->any())
+<div style="color:red">
+
+  @foreach ($errors->all() as $error)
+      <li>{{$error}}</li>
+  @endforeach
+
+</div>
+@endif
 </form>
 @endsection
