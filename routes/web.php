@@ -17,7 +17,7 @@ Route::get('/','HomeController@home')->name('home');
 
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
-Route::resource('/posts','PostController')->only(['show','index','create','store']);
+Route::resource('/posts','PostController')->except(['destroy']);
 /**
  * BEGIN: Injected from .gp/snippets/laravel/routes/web/allow-mixed-web.snippet
  */

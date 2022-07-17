@@ -15,6 +15,7 @@
   <p>
     <h3>
       <a href={{route('posts.show',['post'=>$post])}}>{{$post->title}}</h3></a>
+      <a href="{{route('posts.edit',['post'=>$post->id])}}">Edit</a>
   </p>
   @empty
   <p><h3>No Posts Yet!</h3></p>
